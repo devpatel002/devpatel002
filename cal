@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Koulen&family=Macondo&family=Noto+Sans:wght@300&family=Oswald:wght@300&family=Poppins:wght@300&family=Roboto+Flex:opsz,wght@8..144,300&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+
+    <title>Calculator</title>
+     <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--pmcolor);
+        }
+
+        :root {
+            --pclr: rgb(37, 37, 37);
+            --pclr2: rgb(54, 54, 53);
+            --pclr3: rgb(33, 33, 33);
+            --pmcolor: white;
+            --bdr: rgb(78, 78, 79);
+            --opa: 0.5;
+        }
+
+        .main {
+            height: 418px;
+            width: 300px;
+            background: var(--pclr);
+            /* display: block; */
+            margin: auto;
+            margin-top: 50px;
+            /* font-style: italic; */
+            font-family: 'Roboto Flex', sans-serif;
+        }
+
+        .part1 {
+            height: 200px;
+            background: var(--pclr2);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+        }
+
+        .def {
+            font-size: 3em;
+            margin-right: 0px;
+            padding-left: 250px;
+            padding-top: 120px;
+            overflow: auto;
+            left: 10px;
+            -ms-overflow-style:none;
+            scrollbar-width: none;
+            /* width: 290px; */
+            float: right;
+            
+
+        }
+        .def::-webkit-scrollbar{
+            display: none;
+        }
+        .part2 {
+            display: flex;
+            flex-wrap: wrap;
+            cursor: default;
+            text-align: center;
+
+        }
+
+        .item1 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-left: transparent;
+        }
+
+        .item2 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item3 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item4 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-right: transparent;
+
+        }
+
+        .item4 img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+        .item5 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-left: transparent;
+        }
+
+        .item6 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item7 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item8 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-right: transparent;
+        }
+
+        .item9 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-left: transparent;
+        }
+
+        .item10 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item11 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item12 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-right: transparent;
+
+        }
+
+        .item13 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-left: transparent;
+        }
+
+        .item14 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item15 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item16 {
+            background-color: var(--pclr3);
+            width: 75px;
+            color: var(--pmcolor);
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-right: transparent;
+        }
+
+        .item17 {
+            color: var(--pmcolor);
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            border-left: transparent;
+        }
+
+        .item17 img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+        .item12 img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+        .item16 img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+
+        .item18 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item19 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            color: var(--pmcolor);
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+        }
+
+        .item20 {
+            background-color: var(--pclr3);
+            width: 75px;
+            padding: 10px 15px;
+            border: 0.2px solid var(--bdr);
+            border-top: transparent;
+            color: var(--pmcolor);
+            border-right: transparent;
+            text-decoration: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="serveletS" method="get">
+        <div class="main">
+            <div class="part1">
+                <div class="def" dir="ltr">
+                    <p id="argument"></p>
+                </div>
+            </div>
+            <div class="part2">
+                <button class="item1" type="button" onclick="check_input('%')" value="%">%</button>
+                <button class="item2" type="button" onclick="check_input('CE')">CE</button>
+                <button class="item3" type="button" onclick="check_input('C')">C</button>
+                <button class="item4" type="button" onclick="check_input(-1)"><img
+                        src="https://cdn4.iconfinder.com/data/icons/epic-outlines/30/660989-delete_button-512.png">
+                </button>
+                <button class="item5" type="button" name="" onclick="check_input(7)" value="7">7</button>
+                <button class="item6" type="button" onclick="check_input(8)" value="8">8</button>
+                <button class="item7" type="button" onclick="check_input(9)" value="9">9</button>
+                <button class="item8" type="button" onclick="check_input('*')" value="*">X</button>
+                <button class="item9" type="button" onclick="check_input(4)" value="4">4</button>
+                <button class="item10" type="button" onclick="check_input(5)" value="5">5</button>
+                <button class="item11" type="button" onclick="check_input(6)" value="6">6</button>
+                <button class="item12" type="button" onclick="check_input('-')" value="-"><img
+                        src="https://cdn3.iconfinder.com/data/icons/e-commerce-simple-ui-elements/100/TWalsh__minus-256.png"
+                        alt="minus"></button>
+                <button class="item13" type="button" onclick="check_input(1)" value="1">1</button>
+                <button class="item14" type="button" onclick="check_input(2)" value="2">2</button>
+                <button class="item15" type="button" onclick="check_input(3)" value="3">3</button>
+                <button class="item16" type="button" onclick="check_input('+')" value="+"><img
+                        src="https://cdn4.iconfinder.com/data/icons/navigation-40/24/add-256.png" alt="Add"></button>
+                <button class="item17" type="button" onclick="check_input('/')" value="/"><img
+                        src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/512/divide-256.png"
+                        alt="devide"></button>
+                <button class="item18" type="button" onclick="check_input(0)" value="0">0</button>
+                <button class="item19" type="button" onclick="check_input('.')" value=".">.</button>
+                <input class="item20" type="submit" value="=">
+            </div>
+            <input type="text" name="argument" id="a" style="visibility: visible ;" value="0" >
+        </div>
+    </form>
+    <script src="update_argument.js"></script>
+</body>
+
+</html>
